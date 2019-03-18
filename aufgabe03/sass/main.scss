@@ -1,7 +1,7 @@
 @charset "utf-8";
-@import "compass/reset";
+//@import "compass/reset";
 //sollte diese folgende Zeile zu einer Fehlermeldung führen - kommentieren Sie die folgende und die obere Zeile aus und kommentieren Sie die nachfolgende ein
-@import "compass/css3";
+//@import "compass/css3";
 
 
 
@@ -10,22 +10,29 @@
 
 
 .btn {
-    /* TODO */
+    @include -webkit-transition-property(padding);
+    @include -webkit-transition-duration(300ms);
+    @include -webkit-transition-delay(0ms);
+    @include -webkit-transition-timing-function(linear);
 
     &.ease-in {
         /* TODO */
+        @include -webkit-transition(padding 400ms ease-in 200ms);
     }
 
     &.ease-out {
         /* TODO */
+        @include -webkit-transition(padding 500ms ease-out 100ms);
     }
 
     &.ease-in-out {
         /* TODO */
+        @include -webkit-transition(padding 1600ms ease-in-out 500ms);
     }
 
     &.green {
         /* TODO */
+        @include -webkit-transition(color 900ms linear 500ms);
     }
 
     &.animation {
@@ -49,3 +56,45 @@ body:hover .animation {
     padding-right: 25px;
 }
 
+@keyframes myanimation2 {
+    0% {
+        bottom: auto;
+        left: 0;
+        right: auto;
+        top: 0;
+        position: absolute;
+        color: blue;
+    }
+    25% {
+        bottom: auto;
+        left: auto;
+        right: 0;
+        top: 0;
+        position: absolute;
+        color: green;
+    }
+    50% {
+        bottom: 0;
+        left: auto;
+        right: 0;
+        top: auto;
+        position: absolute;
+        color: red;
+    }
+    75% {
+        bottom: 0;
+        left: 0;
+        right: auto;
+        top: auto;
+        position: absolute;
+        color: yellow;
+    }
+    100% {
+        bottom: auto;
+        left: 0;
+        right: auto;
+        top: 0;
+        position: absolute;
+        color: blue;
+    }
+}
